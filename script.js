@@ -7,9 +7,9 @@ let highscore = 0;
 document.querySelector('.check').addEventListener('click', function() {
     const guess = document.querySelector('.guess').value;
     if (!guess) {
-        displayMessage('Invalid input');
+        displayMessage('Invalid Input');
     } else if (guess == secretNumber) {
-        displayMessage('You won');
+        displayMessage('You Won');
         document.querySelector('.number').textContent = secretNumber;
         document.querySelector('body').style.backgroundColor = '#60b347';
 
@@ -19,21 +19,21 @@ document.querySelector('.check').addEventListener('click', function() {
         }
     } else if (guess !== secretNumber) {
         guess > secretNumber ?
-            displayMessage('Too high') :
-            displayMessage('Too low');
+            displayMessage('Too High') :
+            displayMessage('Too Low');
 
         if (score > 1) {
             score--;
             document.querySelector('.score').textContent = score;
         } else {
-            displayMessage('You lost the game');
+            displayMessage('You Lose');
             document.querySelector('.score').textContent = 0;
         }
     }
 });
 document.querySelector('.again').addEventListener('click', () => {
     score = 20;
-    document.querySelector('body').style.backgroundColor = '#000';
+    document.querySelector('body').style.backgroundColor = 'teal';
     document.querySelector('.number').textContent = '?';
     document.querySelector('.score').textContent = score;
     document.querySelector('.guess').value = '';
